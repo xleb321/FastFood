@@ -14,7 +14,7 @@
 /* Весь центр */
 body{
     margin: 0px ;
-    min-width: 920px ;
+    min-width: 1030px ;
     height: 0px ;
     overflow-x: hidden ;
     background-color: var(--main-bg-color);
@@ -86,7 +86,6 @@ header{
 }
 .korz{
     width: 100% ;
-    min-height: 3em ;
     font-size: 1.2em;
     display: flex ;
     align-items: center ;
@@ -111,9 +110,11 @@ header{
 }
 .korz_info{
     width: 210px ;
+    height: 35px ;
     font-size: 1em;
     font-weight: var(--main-texr-weight);
     display: flex ;
+    align-items: center ;
     justify-content: space-between ;
     border-bottom: 3px solid rgb(245,195,0);
 }
@@ -132,7 +133,7 @@ header{
     border-radius: 0.4em ;
     font-size: 1.1em ;
     transition: 0.5s;
-    background-color: rgb(94, 94, 94);
+    background-color: rgb(128,128,128);
     color: var(--dop-color);
 }
 #korz_buy:hover{
