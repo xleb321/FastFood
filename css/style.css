@@ -1,0 +1,230 @@
+@font-face {
+	font-family: 'Roboto'; 
+	src: url(/ttf/Roboto.ttf); 
+}
+body{
+    margin: 0px ;
+    min-width: 920px ;
+    height: 0px ;
+    overflow-x: hidden ;
+    background-color: rgb(194, 194, 194);
+    font-family: 'Roboto';
+    color: rgb(0,0,0) ;
+    font-size: 15px ;
+}
+header{
+    width: 100% ;
+    height: 70px ;
+    color: rgba(0,0,0,0.9);
+    font-size: 2em ;
+    text-transform: uppercase;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+
+}
+
+.center{
+    width: 100% ;
+    height: auto ;
+}
+
+#left{
+    min-width: 250px ;
+    width: 30% ;
+    min-height: 700px ;
+    margin-left: 20px ;
+    display: flex ;
+    flex-direction: column ;
+}
+.app_menu{
+    min-width: 275px ;
+    max-width: 375px ;
+    margin-left: 20px ;
+    margin-bottom: 20px ;
+    border-radius: 0.5em ;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: rgb(255 ,255 ,255) ;
+
+}
+.menu{
+    width: 100% ;
+    height: 3rem ;
+    font-size: 1.1em ;
+    transition: 0.4s;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+}
+.menu:hover{
+    background-color: rgb(214, 201, 15);
+    font-size: 1.2em;
+}
+
+.korz_app{
+    min-width: 275px ;
+    max-width: 375px ;
+    margin-bottom: 20px ;
+    min-height: 6em ;
+    margin-left: 20px ;
+    border-radius: 0.5em ;
+    display: flex ;
+    align-items: center ;
+    flex-direction: column ;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: rgb(214,201,15);
+}
+.korz{
+    width: 100% ;
+    min-height: 3em ;
+    font-size: 1.2em;
+    display: flex ;
+    align-items: center ;
+}
+.korz_header{
+    width: 100% ;
+    min-height: 2.5em ;
+    font-size: 1.2em;
+    background-color: rgb(192, 180, 18);
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+}
+.korz_info{
+    display: flex ;
+    justify-content: space-evenly ;
+}
+.korz_itog{
+    width: 100% ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center;
+}
+#korz_buy{
+    width: 60% ;
+    height: 2.5rem ;
+    margin-bottom: 1em ;
+    border-radius: 0.4em ;
+    font-size: 1.1em ;
+    transition: 0.5s;
+    background-color: rgb(94, 94, 94);
+    color: rgb(255,255,255);
+}
+#korz_buy:hover{
+    font-size: 1.2em;
+    background-color: rgb(255 ,255 ,255);
+    color: rgb(0,0,0);
+}
+button{
+    font-weight: bold;
+    cursor: pointer ;
+}
+
+
+right{
+    margin-left: 20px ;
+    min-width: 270 ;
+    width: 65% ;
+    height: auto ;
+    display: flex ;
+    justify-content: space-between ;
+}
+tovar{
+    margin: 15px ;
+    min-width: 230px ;
+    width: 275px ;
+    min-height: 450px ;
+    height: min-content ;
+    display: flex ;
+    align-items: center;
+    flex-direction: column ;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 20px ;
+}
+.logo{
+    width: 250 ;
+    height: 150px ;
+    margin-top: -40px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(/img/SubWay.png);
+    background-repeat:no-repeat;
+}
+.prezent{
+    width: 200px ;
+    max-width: 200px ;
+    height: 200px ;
+    max-height: 200px ;
+    margin-top: -45px ;
+    background-color: rgb(255 ,255 ,255);
+    border: 10px rgb(214, 201, 15) solid;
+    border-radius: 100px;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+}
+.prezent_img{
+    object-fit: contain;
+    height: 100px ;
+
+}
+.tipe_prezent{
+    width: 80% ;
+    text-align: center ;
+    padding-bottom: 10px ;
+    margin-top: 10px ;
+    font-weight: 600;
+    font-size: 1.3em;
+    border-bottom: 1px solid rgb(59, 59, 59);
+}
+.prezent_vabor{
+    width: 80% ;
+    min-height: 2.5em ;
+    height: auto ;
+    text-align: center ;
+    border-bottom: 1px solid rgb(59, 59, 59);
+}
+#vabor{
+    font-size: 1.1em ;
+    margin: 5px 0 ;
+    color: rgb(30, 156, 179);
+    font-weight: 600;
+    text-decoration:underline;
+    cursor: pointer ;
+}
+.prise{
+    margin-top: 10px ;
+    font-size: 1.2em;
+    color: rgb(255, 0, 0);
+}
+.quantity{
+    width: 90% ;
+    font-size: 1.1em;
+    align-items: center ;
+    font-weight: 600 ;
+    display: flex;
+    flex-direction: column ;
+}
+
+.quantity input{
+    cursor: pointer;
+    width: 50px ;
+    margin-top: 5px ;
+}
+
+.tovar button{
+    color: rgb(255,255,255);
+    background-color: rgb(214, 201, 15);
+    border: none;
+    border-radius: 0.5em ;
+    margin-top: 10px ;
+    margin-bottom: 10px ;
+    font-size: 1.1em ;
+    height: 3em ;
+    width: 60% ;
+    transition: 0.5s;
+}
+.tovar button:hover{
+    color: rgb(0, 0, 0);
+}

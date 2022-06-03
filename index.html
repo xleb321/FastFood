@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/SubWay.png">
+    <title>SUBWAY</title>
+</head>
+<body>
+    
+    <header>сделай заказ напрямую из ресторана</header>
+    <section style="display: flex ;" class="center">
+        <left id="left">
+            <div class="app_menu">
+                <div class="menu">Блины</div>
+                <div class="menu">Шаурма</div>
+                <div class="menu">Сэндвичи</div>
+                <div class="menu">Бургеры</div>
+                <div class="menu">Курица $ Картофель</div>
+                <div class="menu">Тортилья & Салаты</div>
+                <div class="menu">Напитки & Десерты</div>
+            </div>
+            <div class="korz_app">
+                <div class="korz korz_header">
+                    <div>
+                        <svg class="" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383L5.93 1.757zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1z"/>
+                        </svg>
+                    </div>
+                    <div style="padding-left: 1em ;">
+                        Корзина
+                    </div>
+                </div>
+                <div class="korz korz_info">
+                    <div class="korz_name">
+                        Название: <sum id="korz_name_food">x</sum>
+                    </div>
+                    <div class="korz_kol">
+                        Количество: <sum id="korz_kol_tov">0</sum>
+                    </div>
+                </div>
+                <div class="korz korz_itog">
+                    Итого: <sum id="korz_sum"> 0</sum>
+                </div>
+                <button id="korz_buy">оформить заказ</button>
+            </div>
+        </left>
+        <right>
+            <tovar class="tovar">
+                <img class='logo' src="img/SubWay.png">
+                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
+                <div class="tipe_prezent">Овощной</div>
+                <div class="prezent_vabor"><div id="vabor">соус и овощи на выбор</div></div>
+                <div class="prise">Цена: <sum>110</sum> ₽</div>
+                <div class="quantity"><div>количество</div><div><input type="number" min="1" placeholder="1"></div></div>
+                <button>В КОРЗИНУ</button>
+            </tovar>
+            <tovar class="tovar">
+                <img class='logo' src="img/SubWay.png">
+                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
+                <div class="tipe_prezent">Сабвэй-клаб</div>
+                <div class="prezent_vabor"><div id="vabor">Индейка, ретчина, росбиф, соус и овощи на выбор</div></div>
+                <div class="prise">Цена: <sum>180</sum> ₽</div>
+                <div class="quantity"><div>количество</div><div><input type="number" min="1" placeholder="1"></div></div>
+                <button>В КОРЗИНУ</button>
+            </tovar> 
+            <tovar class="tovar">
+                <img class='logo' src="img/SubWay.png">
+                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
+                <div class="tipe_prezent">Альпийский</div>
+                <div class="prezent_vabor"><div id="vabor">Альпийские колбаски 2шт, соус и овощи на выбор</div></div>
+                <div class="prise">Цена: <sum>180</sum> ₽</div>
+                <div class="quantity"><div>количество</div><div><input type="number" min="1" placeholder="1"></div></div>
+                <button>В КОРЗИНУ</button>
+            </tovar> 
+            <tovar class="tovar">
+                <img class='logo' src="img/SubWay.png">
+                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
+                <div class="tipe_prezent">Мясной</div>
+                <div class="prezent_vabor"><div id="vabor">Мясо и соус на выбор</div></div>
+                <div class="prise">Цена: <sum>180</sum> ₽</div>
+                <div class="quantity"><div>количество</div><div><input type="number" min="1" placeholder="1"></div></div>
+                <button>В КОРЗИНУ</button>
+            </tovar> 
+            
+        </right>
+    </section>
+
+</body>
+</html>
