@@ -1,17 +1,27 @@
+/* шрифт */
 @font-face {
 	font-family: 'Roboto'; 
 	src: url(/ttf/Roboto.ttf); 
 }
+/*  */
+:root {
+    --main-color: rgb(0,0,0);
+    --dop-color: rgb(255,255,255);
+    --dop-bg-color: rgb(214,201,15);
+    --main-bg-color: rgb(194, 194, 194);
+  }
+/* Весь центр */
 body{
     margin: 0px ;
     min-width: 920px ;
     height: 0px ;
     overflow-x: hidden ;
-    background-color: rgb(194, 194, 194);
+    background-color: var(--main-bg-color);
     font-family: 'Roboto';
-    color: rgb(0,0,0) ;
+    color: var(--main-color) ;
     font-size: 15px ;
 }
+/* Шапка */
 header{
     width: 100% ;
     height: 70px ;
@@ -57,7 +67,7 @@ header{
     justify-content: center ;
 }
 .menu:hover{
-    background-color: rgb(214, 201, 15);
+    background-color: var(--dop-bg-color);
     font-size: 1.2em;
 }
 
@@ -72,7 +82,7 @@ header{
     align-items: center ;
     flex-direction: column ;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    background-color: rgb(214,201,15);
+    background-color: var(--dop-bg-color);
 }
 .korz{
     width: 100% ;
@@ -108,12 +118,12 @@ header{
     font-size: 1.1em ;
     transition: 0.5s;
     background-color: rgb(94, 94, 94);
-    color: rgb(255,255,255);
+    color: var(--dop-color);
 }
 #korz_buy:hover{
     font-size: 1.2em;
-    background-color: rgb(255 ,255 ,255);
-    color: rgb(0,0,0);
+    background-color: var(--dop-color);
+    color: var(--main-color);
 }
 button{
     font-weight: bold;
@@ -157,7 +167,7 @@ tovar{
     height: 200px ;
     max-height: 200px ;
     margin-top: -45px ;
-    background-color: rgb(255 ,255 ,255);
+    background-color: var(--dop-color);
     border: 10px rgb(214, 201, 15) solid;
     border-radius: 100px;
     display: flex ;
@@ -215,7 +225,7 @@ tovar{
 
 .tovar button{
     color: rgb(255,255,255);
-    background-color: rgb(214, 201, 15);
+    background-color: var(--dop-bg-color);
     border: none;
     border-radius: 0.5em ;
     margin-top: 10px ;
