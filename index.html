@@ -11,8 +11,8 @@
 <body>
     
     <header>СДЕЛАЙ ЗАКАЗ НАПРЯМУЮ ИЗ РЕСТОРАНА</header>
-    <section style="display: flex ;" class="center">
-        <left id="left">
+    <section class="center">
+        <div id="left">
             <div class="app_menu">
                 <div class="menu">Блины</div>
                 <div class="menu">Шаурма</div>
@@ -46,46 +46,87 @@
                 </div>
                 <button id="korz_buy">ОФОРМИТЬ ЗАКАЗ</button>
             </div>
-        </left>
-        <!-- <right>
+        </div>
+        <div id='right'>
             <tovar class="tovar">
                 <img class='logo' src="img/SubWay.png">
                 <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
                 <div class="tipe_prezent">Овощной</div>
-                <div class="prezent_vabor"><div id="vabor">соус и овощи на выбор</div></div>
-                <div class="prise">Цена: <sum>110</sum> ₽</div>
-                <div class="quantity"><div>количество</div><div><input type="number" min="1" placeholder="1"></div></div>
-                <button>В КОРЗИНУ</button>
+                <div class="prezent_vabor"><div id="vabor">Соус и овощи на выбор</div></div>
+                <div class="prise">Цена: <sum>110</sum> руб.</div>
+                <div class="quantity"><div>количество</div><div class="quantity_but">
+                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                    <input type="number" min="1" value="1" placeholder="1" class="raz">
+                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                </div></div>
+                <button class="add">В КОРЗИНУ</button>
             </tovar>
             <tovar class="tovar">
                 <img class='logo' src="img/SubWay.png">
                 <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
-                <div class="tipe_prezent">Сабвэй-клаб</div>
+                <div class="tipe_prezent">Сабвэй Клаб</div>
                 <div class="prezent_vabor"><div id="vabor">Индейка, ретчина, росбиф, соус и овощи на выбор</div></div>
-                <div class="prise">Цена: <sum>180</sum> ₽</div>
-                <div class="quantity"><div>количество</div><div><input type="number" min="1" placeholder="1"></div></div>
-                <button>В КОРЗИНУ</button>
+                <div class="prise">Цена: <sum>180</sum> руб.</div>
+                <div class="quantity"><div>количество</div><div class="quantity_but">
+                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                    <input type="number" min="1" value="1" placeholder="1" class="raz">
+                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                </div></div>
+                <button class="add">В КОРЗИНУ</button>
             </tovar> 
             <tovar class="tovar">
                 <img class='logo' src="img/SubWay.png">
                 <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
                 <div class="tipe_prezent">Альпийский</div>
                 <div class="prezent_vabor"><div id="vabor">Альпийские колбаски 2шт, соус и овощи на выбор</div></div>
-                <div class="prise">Цена: <sum>180</sum> ₽</div>
-                <div class="quantity"><div>количество</div><div><input type="number" min="1" placeholder="1"></div></div>
-                <button>В КОРЗИНУ</button>
+                <div class="prise">Цена: <sum>180</sum> руб.</div>
+                <div class="quantity"><div>количество</div><div class="quantity_but">
+                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                    <input type="number" min="1" value="1" placeholder="1" class="raz">
+                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button></div>
+                </div>
+                <button class="add">В КОРЗИНУ</button>
             </tovar> 
             <tovar class="tovar">
                 <img class='logo' src="img/SubWay.png">
                 <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
                 <div class="tipe_prezent">Мясной</div>
                 <div class="prezent_vabor"><div id="vabor">Мясо и соус на выбор</div></div>
-                <div class="prise">Цена: <sum>180</sum> ₽</div>
-                <div class="quantity"><div>количество</div><div><input type="number" min="1" placeholder="1"></div></div>
-                <button>В КОРЗИНУ</button>
-            </tovar> 
-            
-        </right> -->
+                <div class="prise">Цена: <sum>180</sum> руб.</div>
+                <div class="quantity"><div>количество</div><div class="quantity_but">
+                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                    <input type="number" min="1" value="1" placeholder="1" class="raz">
+                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                </div></div>
+                <button class="add">В КОРЗИНУ</button>
+            </tovar>
+            <tovar class="tovar">
+                <img class='logo' src="img/SubWay.png">
+                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
+                <div class="tipe_prezent">Мясной</div>
+                <div class="prezent_vabor"><div id="vabor">Мясо и соус на выбор</div></div>
+                <div class="prise">Цена: <sum>180</sum> руб.</div>
+                <div class="quantity"><div>количество</div><div class="quantity_but">
+                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                    <input type="number" min="1" value="1" placeholder="1" class="raz">
+                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                </div></div>
+                <button class="add">В КОРЗИНУ</button>
+            </tovar>
+            <tovar class="tovar">
+                <img class='logo' src="img/SubWay.png">
+                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
+                <div class="tipe_prezent">Мясной</div>
+                <div class="prezent_vabor"><div id="vabor">Мясо и соус на выбор</div></div>
+                <div class="prise">Цена: <sum>180</sum> руб.</div>
+                <div class="quantity"><div>количество</div><div class="quantity_but">
+                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                    <input type="number" min="1" value="1" placeholder="1" class="raz">
+                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                </div></div>
+                <button class="add">В КОРЗИНУ</button>
+            </tovar>
+        </div>
     </section>
 
 </body>

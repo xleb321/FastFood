@@ -7,19 +7,20 @@
 :root {
     --main-color: rgb(0,0,0);
     --dop-color: rgb(255,255,255);
+    --dop-color-rgba: rgba(0,0,0,0.65);
     --dop-bg-color: rgb(246,216,70);
-    --main-bg-color: rgb(226, 226, 226);
-    --main-texr-weight: 600 ;
+    --main-bg-color: rgb(237,236,234);
+    --main-text-weight: 600 ;
+    --main-border:2px solid rgba(59, 59, 59 , 0.65);
   }
 /* Весь центр */
 body{
+    min-width: 860px ;
     margin: 0px ;
-    min-width: 1030px ;
-    height: 0px ;
     overflow-x: hidden ;
     background-color: var(--main-bg-color);
     font-family: 'Roboto';
-    color: var(--main-color) ;
+    color: var(--dop-color-rgba) ;
     font-size: 15px ;
 }
 /* Шапка */
@@ -27,7 +28,7 @@ header{
     width: 100% ;
     height: 100px ;
     margin-bottom: 10px ;
-    color: rgba(0,0,0,0.65);
+    color: var(--dop-color-rgba);
     font-weight: 600;
     font-size: 2.6em ;
     text-transform: uppercase;
@@ -38,6 +39,7 @@ header{
 }
 
 .center{
+    display: flex ;
     width: 100% ;
     height: auto ;
 }
@@ -69,6 +71,7 @@ header{
 }
 .menu:hover{
     background-color: var(--dop-bg-color);
+    color: var(--dop-color);
     font-size: 1.2em;
 }
 
@@ -81,6 +84,7 @@ header{
     display: flex ;
     align-items: center ;
     flex-direction: column ;
+    color: var(--dop-color-rgba);
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     background-color: var(--dop-bg-color);
 }
@@ -112,7 +116,7 @@ header{
     width: 210px ;
     height: 35px ;
     font-size: 1em;
-    font-weight: var(--main-texr-weight);
+    font-weight: var(--main-text-weight);
     display: flex ;
     align-items: center ;
     justify-content: space-between ;
@@ -120,15 +124,16 @@ header{
 }
 .korz_itog{
     width: 100% ;
-    font-size: 1.1em ;
-    font-weight: var(--main-texr-weight);
+    height: 60px;
+    font-size: 1.2em ;
+    font-weight: var(--main-text-weight);
     display: flex ;
     align-items: center ;
     justify-content: center;
 }
 #korz_buy{
     width: 170px ;
-    height: 2.5rem ;
+    height: 2.2rem ;
     margin-bottom: 1em ;
     border-radius: 0.4em ;
     font-size: 1.1em ;
@@ -138,7 +143,7 @@ header{
 }
 #korz_buy:hover{
     background-color: var(--dop-color);
-    color: var(--main-color);
+    color: var(--dop-color-rgba);
 }
 button{
     font-weight: bold;
@@ -147,31 +152,33 @@ button{
 }
 
 
-right{
+#right{
     margin-left: 20px ;
     min-width: 270 ;
-    width: 65% ;
+    width: calc(100%-255px) ;
     height: auto ;
-    display: grid ;
-    grid-template-columns: auto ;
-
+    display: flex ;
+    flex-wrap: wrap ;
+    justify-content: space-around ;
 }
 tovar{
-    margin: 15px ;
-    min-width: 230px ;
-    width: 275px ;
+    margin-left: 7px ;
+    margin-right: 7px ;
+    margin-bottom: 30px;
+    width: 220px ;
     min-height: 450px ;
     height: min-content ;
     display: flex ;
     align-items: center;
     flex-direction: column ;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    border-radius: 20px ;
+    color: var(--dop-color-rgba);
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.2); */
+    /* border-radius: 20px ; */
 }
 .logo{
-    width: 250 ;
+    width: 215px ;
     height: 150px ;
-    margin-top: -40px ;
+    margin-top: -50px ;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,10 +186,8 @@ tovar{
     background-repeat:no-repeat;
 }
 .prezent{
-    width: 200px ;
-    max-width: 200px ;
-    height: 200px ;
-    max-height: 200px ;
+    width: 170px ;
+    height: 170px ;
     margin-top: -45px ;
     background-color: var(--dop-color);
     border: 10px rgb(214, 201, 15) solid;
@@ -197,61 +202,113 @@ tovar{
 
 }
 .tipe_prezent{
-    width: 80% ;
+    width: 230px ;
+    height: 30px ;
     text-align: center ;
     padding-bottom: 10px ;
     margin-top: 10px ;
     font-weight: 600;
-    font-size: 1.3em;
-    border-bottom: 1px solid rgb(59, 59, 59);
+    font-size: 1.4em;
 }
 .prezent_vabor{
-    width: 80% ;
-    min-height: 2.5em ;
-    height: auto ;
+    width: 90% ;
+    height: 55px ;
     text-align: center ;
-    border-bottom: 1px solid rgb(59, 59, 59);
+    border-top: var(--main-border);
+    border-bottom: var(--main-border);
 }
 #vabor{
-    font-size: 1.1em ;
+    font-size: 0.9em ;
+    line-height: 20px ;
     margin: 5px 0 ;
-    color: rgb(30, 156, 179);
+    color: rgb(73,142,200);
     font-weight: 600;
     text-decoration:underline;
     cursor: pointer ;
 }
 .prise{
-    margin-top: 10px ;
+    margin-top: 7.5px ;
     font-size: 1.2em;
-    color: rgb(255, 0, 0);
+    color: rgb(218,110,79);
+    font-weight: var(--main-text-weight);
 }
 .quantity{
     width: 90% ;
-    font-size: 1.1em;
+    font-size: 1em;
+    margin-top: 5px ;
     align-items: center ;
     font-weight: 600 ;
     display: flex;
+    align-items: center ;
+    justify-content: center ;
     flex-direction: column ;
 }
-
-.quantity input{
-    cursor: pointer;
-    width: 50px ;
-    margin-top: 5px ;
+.quantity button{
+    font-family: Arial;
+}
+.quantity_but{
+    display: flex ;
+    align-items: center;
+    justify-content: center ;
 }
 
-.tovar button{
-    color: rgb(255,255,255);
-    background-color: var(--dop-bg-color);
+.quantity input[type="number"]{
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+    background-color: var(--dop-color);
     border: none;
-    border-radius: 0.5em ;
+    width: 45px ;
+    height: 22.5px ;
+    margin: 2px 15px ;
+    text-align: center ;
+    border-radius: 5px ;
+    box-shadow: 0 0 3px rgba(0 ,0 ,0 ,0.2);
+}
+.switches{
+    width: 20px ;
+    height: 20px ;
+    border-radius: 20px ;
+    background-color: white ;
+    text-align: center ;
+    color: var(--main-bg-color) ;
+    font-size: 20px ;
+    transition: 0.25s;
+    box-shadow: 0 0 3px rgba(0 ,0 ,0 ,0.4);
+}
+
+.tovar button.add{
+    color: rgb(255,255,255);
+    background-color: rgb(245,195,0);
+    border: none;
+    border-bottom: 2px solid rgb(129,112,46);
+    border-radius: 0.25em ;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
     margin-top: 10px ;
     margin-bottom: 10px ;
-    font-size: 1.1em ;
-    height: 3em ;
+    font-size: 1em ;
+    height: 32.5px ;
     width: 60% ;
     transition: 0.5s;
 }
 .tovar button:hover{
     color: rgb(0, 0, 0);
+}
+
+input[type="number"] {
+	appearance: textfield;
+}
+
+.raz {
+    all: unset;
+    -moz-appearance: textfield;
+    font-size: 0.8em;
+    text-align: center;
+  }
+.raz::-webkit-inner-spin-button { 
+    display: none ;
+  }
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
 }
