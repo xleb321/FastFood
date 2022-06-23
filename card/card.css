@@ -1,0 +1,203 @@
+:root {
+    --main-color: rgb(68, 68, 68);
+    --main-color-hover: rgb(0, 154, 61);
+    --color-white: rgb(255, 255, 255);
+    --orange: rgb(244, 178, 0);
+    --main-bg-color: rgb(236, 234, 233);
+}
+
+.card {
+    width: 210px;
+    margin: 0 20px 80px 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: 210px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo {
+    height: 60px;
+}
+
+.type {
+    margin-top: 10px;
+    margin-left: -6px;
+    width: 165px;
+    height: 165px;
+    border-radius: 100px;
+    border: 10px solid var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+#type {
+    transform: scale(0.7);
+}
+
+.name_type {
+    font-size: 1em;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#variety {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 0.7em;
+    color: rgb(80, 145, 202);
+    text-decoration: underline;
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    line-height: 1.1em;
+    cursor: pointer;
+}
+
+.prices {
+    height: 50px;
+    font-size: 0.9em;
+    color: rgb(217, 105, 73);
+    margin-left: -2px;
+    margin-top: -5px;
+    display: flex;
+    align-items: center;
+}
+
+.lot {
+    margin-left: -6px;
+    margin-top: -7px;
+    font-size: 0.555em;
+}
+
+.switches {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.sum_item {
+    margin: 0 0 0 -6px;
+}
+
+.sum_item button {
+    margin: 0 20px;
+}
+
+.sum_item input[type=number] {
+    width: 40px;
+    height: 22.5px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-white);
+    cursor: pointer;
+}
+
+input[type="number"] {
+    appearance: textfield;
+}
+
+.raz {
+    all: unset;
+    -moz-appearance: textfield;
+    font-size: 0.8em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.raz::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.in_busket button {
+    margin: 8px 0 0 -6.5px;
+    width: 140px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--orange);
+    font-weight: 600;
+    font-size: 0.7em;
+    color: var(--color-white);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.in_busket button:hover {
+    background-color: var(--main-color-hover);
+    
+}
+
+
+.custom_burgers_backgraund{
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    z-index: 501 ;
+    width: 100% ;
+    height: 100% ;
+    background-color: rgba(0,0,0,0.5) ;
+}
+.custom_burgers{
+    position: fixed; 
+    left: 30% ;
+    z-index: 502 ;
+    width: 800px ;
+    opacity: 1 ;
+    background-color: var(--main-bg-color);
+}
+.custom_burger_header{
+    width: 100% ;
+    height: 60px ;
+    border-radius: 10px 10px 0 0 ;
+    color: var(--color-white);
+    background-color: var(--orange);
+    display: flex ;
+    justify-content: space-around ;
+    align-items: center ;
+}
+.custom_burger_tovar_all{
+    width: 100% ;
+    margin: 30px 0;
+    display: flex ;
+    justify-content: center ;
+}
+#custom_burger_tovar{
+    width: 90%;
+    background-color: var(--color-white);
+    border-radius: 5px ;
+    display: flex ;
+    justify-content: space-around ;
+}
+.custom_burger_active{
+    background-color: rgb(217,103,70);
+    border-radius: 5px ;
+}
+.custom_burger_podbor{
+    width: calc(auto+30px);
+    height: 50px ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+}
