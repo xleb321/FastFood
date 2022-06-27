@@ -7,11 +7,6 @@ let chickenID = document.getElementById('chicken');
 let saladsID = document.getElementById('salads');
 let drinksID = document.getElementById('drinks');
 
-//? Корзина
-let busket = document.getElementById('busket_tovar');
-let itog = document.getElementById('korz_sum');
-let itog_sum = 0 ;
-
 //! для смены карточек и замены заднего фона 
 let category = 'shaurma';
 let new_categoria = '';
@@ -66,7 +61,7 @@ function reduction() {
 
 //* В левом меню показывает активную вкладку 
 function resetCards() {
-	// console.clear();
+	console.clear();
 	console.log('category up to :', category);
 	if (category != new_categoria) {
 		document.getElementById(category).classList.remove('product_active');
@@ -118,45 +113,12 @@ function CreatsCards() {
 	})()
 };
 
-//* Для загрузки страницы вызываем функцию
+//* Для загрузки страницы
+
 CreatsCards();
 
-
-//* Генерация в корзину 
 function add2Cart(name, price, numberNode) {
 
-	// X число для поиска товара куда добавить значение
-	let x = -1 ;
-
-	// Находим количество добавленных товаров
-	let cntFromCard = cards.childNodes[numberNode].nextElementSibling.childNodes[13].childNodes[3].value ;
-
-	// Массив закупок
-	let basket_tovar_arr = document.getElementsByClassName('busket_tovar_all');
-	// Длина массива 
-	let z = basket_tovar_arr.length ; 
-
-	//* Генерация итоговой суммы
-	itog_sum = price*cntFromCard + itog_sum;
-	itog.innerHTML = itog_sum ;
-	
-	// Проверка на повторы в корзине 
-	for (let i = 0; i < z ; i++) {
-		if (name == basket_tovar_arr[i].childNodes[1].textContent){
-			x = i ;
-		}
-	}
-
-	// Условие 
-	// Если повторы есть , значит добавляем число а не целый това 
-	// Иначе добавляем товар
-	if ( x != -1){
-		// Добавление количество товаровесли они повторяются
-		basket_tovar_arr[x].childNodes[2].textContent = Number(basket_tovar_arr[x].childNodes[2].textContent) + Number(cntFromCard)
-	} else {
-		// Генерация товаров в корзину
-		busket.innerHTML += `<div class="busket_tovar_all">
-	 	<div>${name}</div><div class="basket_amount">${cntFromCard}</div></div>`
-	}
-
+	let cntFromCard = document.getElementById("cards").childNodes[numberNode].childNodes[13].childNodes[3].value;
+	alert(`Вы положили в корзину "${name}" по цене ${price} руб в кол-ве ${cntFromCard} штук(и) на сумму ${price*cntFromCard} руб.`)
 }

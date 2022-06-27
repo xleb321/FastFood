@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="card/card.css">
     <link rel="icon" type="image/png" href="img/SubWay.png">
     <title>SUBWAY</title>
 </head>
@@ -14,119 +15,45 @@
     <section class="center">
         <div id="left">
             <div class="app_menu">
-                <div class="menu">Блины</div>
-                <div class="menu">Шаурма</div>
-                <div class="menu">Сэндвичи</div>
-                <div class="menu">Бургеры</div>
-                <div class="menu">Курица $ Картофель</div>
-                <div class="menu">Тортилья & Салаты</div>
-                <div class="menu">Напитки & Десерты</div>
+                <div id="pancakes" class="products">Блины</div>
+                <div id="shaurma" class="products">Шаурма</div>
+                <div id="sandwiches" class="products">Сэндвичи</div>
+                <div id="burgers" class="products">Бургеры</div>
+                <div id="chicken" class="products">Курица $ Картофель</div>
+                <div id="salads" class="products">Тортилья & Салаты</div>
+                <div id="drinks" class="products">Напитки & Десерты</div>
             </div>
-            <div class="korz_app">
-                <div class="korz korz_header">
-                    <div class="korz_header_svg">
-                        <svg style="margin-left: -15px;  filter: drop-shadow(10px 10px 10px 10px rgba(0, 0, 0, 0.5));" fill="currentColor" x="0" y="0" width="16" height="16">
-                            <path d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383L5.93 1.757zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1z"/>
-                        </svg>
+            <div class="basket">
+                <div class="basket_header">
+                    <div class="basket_header_svg">
+                        <svg width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
+                          </svg>
                     </div>
-                    <div>
+                    <div class="basket_header_name">
                         Корзина
                     </div>
                 </div>
-                <div class="korz_info">
-                    <div class="korz_name">
-                        Название <sum id="korz_name_food"></sum>
+                <div class="basket_division">
+                    <div>
+                        Название
                     </div>
-                    <div class="korz_kol">
-                        Количество <sum id="korz_kol_tov"></sum>
+                    <div>
+                        Количество
                     </div>
                 </div>
-                <div class="korz korz_itog">
+                <div id="busket_tovar"></div>
+                <div class="basket_total">
                     Итого: <sum id="korz_sum"> 0</sum> руб.
                 </div>
-                <button id="korz_buy">ОФОРМИТЬ ЗАКАЗ</button>
-            </div>
-        </div>
-        <div id='right'>
-            <div class="tovar">
-                <img class='logo' src="img/SubWay.png">
-                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
-                <div class="tipe_prezent">Овощной</div>
-                <div class="prezent_vabor"><div id="vabor">Соус и овощи на выбор</div></div>
-                <div class="prise">Цена: <sum>110</sum> руб.</div>
-                <div class="quantity"><div>количество</div><div class="quantity_but">
-                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                    <input type="number" min="1" value="1" placeholder="1" class="raz">
-                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
-                </div></div>
-                <button class="add">В КОРЗИНУ</button>
-            </div>
-            <div class="tovar">
-                <img class='logo' src="img/SubWay.png">
-                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
-                <div class="tipe_prezent">Сабвэй Клаб</div>
-                <div class="prezent_vabor"><div id="vabor">Индейка, ретчина, росбиф, соус и овощи на выбор</div></div>
-                <div class="prise">Цена: <sum>180</sum> руб.</div>
-                <div class="quantity"><div>количество</div><div class="quantity_but">
-                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                    <input type="number" min="1" value="1" placeholder="1" class="raz">
-                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
-                </div></div>
-                <button class="add">В КОРЗИНУ</button>
-            </div> 
-            <div class="tovar">
-                <img class='logo' src="img/SubWay.png">
-                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
-                <div class="tipe_prezent">Альпийский</div>
-                <div class="prezent_vabor"><div id="vabor">Альпийские колбаски 2шт, соус и овощи на выбор</div></div>
-                <div class="prise">Цена: <sum>180</sum> руб.</div>
-                <div class="quantity"><div>количество</div><div class="quantity_but">
-                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                    <input type="number" min="1" value="1" placeholder="1" class="raz">
-                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button></div>
+                <div class="subtotal">
+                    <button id="korz_buy">ОФОРМИТЬ ЗАКАЗ</button>
                 </div>
-                <button class="add">В КОРЗИНУ</button>
-            </div> 
-            <div class="tovar">
-                <img class='logo' src="img/SubWay.png">
-                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
-                <div class="tipe_prezent">Мясной</div>
-                <div class="prezent_vabor"><div id="vabor">Мясо и соус на выбор</div></div>
-                <div class="prise">Цена: <sum>180</sum> руб.</div>
-                <div class="quantity"><div>количество</div><div class="quantity_but">
-                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                    <input type="number" min="1" value="1" placeholder="1" class="raz">
-                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
-                </div></div>
-                <button class="add">В КОРЗИНУ</button>
-            </div>
-            <div class="tovar">
-                <img class='logo' src="img/SubWay.png">
-                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
-                <div class="tipe_prezent">Мясной</div>
-                <div class="prezent_vabor"><div id="vabor">Мясо и соус на выбор</div></div>
-                <div class="prise">Цена: <sum>180</sum> руб.</div>
-                <div class="quantity"><div>количество</div><div class="quantity_but">
-                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                    <input type="number" min="1" value="1" placeholder="1" class="raz">
-                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
-                </div></div>
-                <button class="add">В КОРЗИНУ</button>
-            </div>
-            <div class="tovar">
-                <img class='logo' src="img/SubWay.png">
-                <div class="prezent"><img class="prezent_img" src="img/subway-burger.png"></div>
-                <div class="tipe_prezent">Мясной</div>
-                <div class="prezent_vabor"><div id="vabor">Мясо и соус на выбор</div></div>
-                <div class="prise">Цена: <sum>180</sum> руб.</div>
-                <div class="quantity"><div>количество</div><div class="quantity_but">
-                    <button class="switches" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                    <input type="number" min="1" value="1" placeholder="1" class="raz">
-                    <button class="switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
-                </div></div>
-                <button class="add">В КОРЗИНУ</button>
             </div>
         </div>
+        <div id='cards'>
+        </div>
+        <script src="card/card.js"></script>
     </section>
 </body>
 </html>
