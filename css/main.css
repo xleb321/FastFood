@@ -46,7 +46,6 @@ section {
 #left {
     width: 240px;
     margin-left: 18.5px;
-    position: fixed ;
     z-index: 500 ;
 }
 .app_menu {
@@ -135,15 +134,24 @@ section {
     width: 90% ;
     padding: 5px 0 5px 0;
     display: flex ;
+    justify-content: center ;
     align-items: center ;
     border-bottom: var(--border-orange);
 }
-#busket_tovar div:first-child{
-    width: 90% ;
+.busket_tovar_exit{
+    text-align: start ;
+    height: 100% ;
+    width: 5% ;
+    cursor: pointer;
+}
+.busket_tovar_name{
+    margin: 0 2.5% ;
+    width: 85% ;
+    text-align: center ;
 }
 .basket_amount{
-    width: 5% ;
     text-align: end ;
+    width: 5% ;
 }
 
 .basket_total {
@@ -214,9 +222,93 @@ section {
 
 
 #cards {
-    width: (100%-260px);
+    width: (100%-258.5px);
+    margin-left: 20px ;
     height: auto;
-    margin-left: 292.5px ;
     display: flex;
     flex-wrap: wrap;
 }
+
+
+.title_without_orders_backgraund{
+    width:100%;
+    height:100%;
+    z-index: 550;
+    position:fixed;
+    top: 0 ;
+    left: 0 ;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.title_without_orders_center_all{
+    width: 100% ;
+    height: 100% ;
+    z-index: 551 ;
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+}
+.title_without_orders_center{
+    width: 800px ;
+    height: 620px ;
+    display: flex ;
+    flex-direction: column ;
+}
+.title_without_orders_header{
+    width: 100% ;
+    height: 60px ;
+    background-color: rgb(245,195,0);
+    color: var(--color-white);
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    border-radius: 5px 5px 0 0;
+}
+.title_without_orders_body{
+    width: 100% ;
+    height: 500px ;
+    font-size: 2em ;
+    background-color: var(--main-bg-color);
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+}
+.title_without_orders_botton{
+    width: 100% ;
+    height: 60px ;
+    background-color: var(--color-white);
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    border-radius: 0 0 5px 5px ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
