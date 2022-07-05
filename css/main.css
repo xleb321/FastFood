@@ -79,7 +79,7 @@ section {
 
 
 .basket {
-    width: 100%;
+    min-width: 100%;
     height: auto;
     border-radius: 2.5px;
     box-shadow: var(--main-shadow);
@@ -90,7 +90,7 @@ section {
 }
 
 .basket_header {
-    width: 100%;
+    min-width: 100%;
     height: 75px;
     color: var(--color-white);
     background-color: rgb(245, 195, 0);
@@ -104,7 +104,7 @@ section {
     justify-content: center;
 }
 .basket_header_name {
-    width: 165px;
+    min-width: 165px;
     height: 75px;
     font-size: 1.8em;
     padding-left: 5px;
@@ -113,7 +113,7 @@ section {
 }
 
 .basket_division {
-    width: 220px;
+    min-width: 220px;
     height: 36.5px;
     font-size: 0.8em;
     display: flex;
@@ -123,7 +123,7 @@ section {
 }
 
 #busket_tovar{
-    width: 100% ;
+    min-width: 100% ;
     display: flex ;
     justify-content: center ;
     align-items: center ;
@@ -134,19 +134,18 @@ section {
     width: 90% ;
     padding: 5px 0 5px 0;
     display: flex ;
-    justify-content: center ;
+    justify-content: space-between ;
     align-items: center ;
     border-bottom: var(--border-orange);
 }
-.busket_tovar_exit{
+.busket_tovar_plus_minus{
     text-align: start ;
-    height: 100% ;
-    width: 5% ;
+    height: 50% ;
+    width: 100% ;
     cursor: pointer;
 }
 .busket_tovar_name{
-    margin: 0 2.5% ;
-    width: 85% ;
+    width: 80% ;
     text-align: center ;
 }
 .basket_amount{
@@ -286,7 +285,43 @@ section {
     border-radius: 0 0 5px 5px ;
 }
 
+.title_without_orders_body_left{
+    width: 50% ;
+    height: 100% ;
+    display: flex ;
+    align-items: center ;
+    flex-direction: column ;
+    font-size: 0.6em ;
+}
 
+.title_without_orders_body_left_header{
+    padding: 10px 0 ;
+}
+.title_exit{
+    cursor: pointer ;
+    position: relative ;
+    left: 30% ;
+    color: white ;
+}
+.title_exit svg path{
+    font-weight: 700 ;
+}
+#title_cards{
+    width: 100% ;
+    height: 100% ;
+    display: flex ;
+    align-items: center ;
+    flex-direction: column ;
+}
+#title_cards .busket_tovar_all{
+    width: 90% ;
+    font-size: 0.9em ;
+}
+
+.title_without_orders_body_right{
+    width: 50% ;
+    height: 100% ;
+}
 
 
 

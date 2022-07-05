@@ -177,42 +177,54 @@ function add2Cart(name, price, numberNode) {
 		basket_tovar_arr[x].childNodes[4].textContent = Number(basket_tovar_arr[x].childNodes[4].textContent) + Number(cntFromCard)
 	} else {
 		// Генерация товаров в корзину
-		busket.innerHTML += `<div class="busket_tovar_all">
-		<div value="${price}" class='busket_tovar_exit'><svg width="20" height="20" fill="currentColor" viewBox="0 0 15 15">
-		<path style='pointer-events: none;' d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-	  	</svg></div>
+		busket.innerHTML += `
+		<div class="busket_tovar_all" value="${price}" name="${name}">
+			<div style='width:10%; height:100%; display:flex; flex-direction: column ; '>
+				<div class='busket_tovar_plus busket_tovar_plus_minus'>
+					<svg style='pointer-events: none ;' width="20" height="20" fill="currentColor" viewBox="0 0 15 15">
+						<path style='pointer-events: none ;' d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+			  		</svg>
+				</div>
+				<div class='busket_tovar_minus busket_tovar_plus_minus'>
+					<svg style='pointer-events: none ;' width="20" height="20" fill="currentColor" viewBox="0 0 15 15">
+						<path style='pointer-events: none ;' d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+					</svg>
+				</div>
+			</div>
 	 	<div class='busket_tovar_name'>${name}</div><div class="basket_amount">${cntFromCard}</div></div>`
 	}
-}
+};
 
-//! Функция для удаления из корзны товаров
-document.querySelector('#busket_tovar').addEventListener('click',function(e){
-  if (document.querySelector('.busket_tovar_exit')) {
-
-	// //Очистка консоли для дальнейших проверок
-		//console.clear();
-	//
-
-	// Пример команд и их проверка 
-		// //Ищёт количество заказов при нажатии на этот элемент в этом объекте
-		// console.log(Number(e.target.parentNode.parentNode.childNodes[4].innerHTML));
-
-		// //Ищет стоимость заказа который уже в корзине при нажатии на крест
-		// console.log(e.path[1].attributes.value.value);
-	// 
-
-	//* Вычисляем сумму которую надо вычесть из итоговой суммы  
-	let itog_summa = Number(e.target.parentNode.parentNode.childNodes[4].innerHTML) * Number(e.path[1].attributes.value.value) ;
+//! Функция + и - у карточек   
+document.querySelector('#busket_tovar').addEventListener('click',function(e){ // Отлов нажатий в корзине => карточки 
 	
-	//* Вычисление новой итоговой суммы
-	itog_sum = itog_sum - itog_summa ;
+	if (e.target.classList.contains("busket_tovar_plus")) { // если нажали на + 
+		
+		// Увеличивает цифру отображаемую карточки
+		e.target.parentNode.parentNode.childNodes[4].innerHTML++; // Добавляем один товар в карточку
 
-	//* Выводим новоую итоговую сумму в корзину
-	itog.innerHTML = itog_sum ;
+		// Добавляет в итоговую сумму стоимость карточки 
+		let itog_summa = Number(e.target.parentNode.parentNode.attributes.value.value); // Ищем стоимость 1 товара
+		itog_sum = itog_sum + itog_summa ; // Считаем новую итоговую сумму 
+		itog.innerHTML = itog_sum ; // Выводим итоговую сумму
 
-	// Удаление элемента из корзины при нажатии на крест в данном объекте
-	e.target.parentNode.parentNode.remove()
-  }
+	}
+	if (e.target.classList.contains("busket_tovar_minus")) { // Нажатие на - в карточке
+
+		if (Number(e.target.parentNode.parentNode.childNodes[4].innerHTML) == 1){ // Если в карточке был всего 1 заказ
+			// удаляем товар
+			e.target.parentNode.parentNode.remove()
+		} else { // Если их было более 1 , от 2 
+			// Вычитаем из карточки 1 товар
+			e.target.parentNode.parentNode.childNodes[4].innerHTML--;
+		}
+
+		// Вычитаем из корзины стоимость товара
+		let itog_summa = Number(e.target.parentNode.parentNode.attributes.value.value); // Ищем стоимость 1 товара
+		itog_sum = itog_sum - itog_summa ; // Считаем новую итоговую сумму  
+		itog.innerHTML = itog_sum ; // Выводим итоговую сумму
+	}
+	
 })
 
 //todo Запускаем функцию карзины
@@ -228,7 +240,7 @@ checkout.onclick = () => {
 		// Для закрытия страницы <Без покупок>
 		setTimeout(without_orders,2500);
 	} else {
-		with_orders();	
+		with_orders();
 	};
 }
 
@@ -263,6 +275,130 @@ function without_orders(){
 };
 
 //! Если есть заказы , то выводится эта страница
-function with_orders(){
+function with_orders(name, price, numberNode){
+	checkout_title.innerHTML = `
+		<div class='title_without_orders_backgraund'></div>
+		<div class='title_without_orders_center_all'>
+			<div class='title_without_orders_center'>
+				<div class='title_without_orders_header'>
+					<div>Оформление заказа</div>
+					<div class='title_exit'>
+						<svg style='pointer-events: none ;' width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+							<path style='pointer-events: none ;' d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+				 		</svg>
+					</div>
+				</div>
+				<div class='title_without_orders_body'>
+					<div class='title_without_orders_body_left'>
+						<div class='title_without_orders_body_left_header'>Ваши заказы</div>
+						<div id='title_cards'>
+
+						</div>
+					</div>
+					<div class='title_without_orders_body_right'>
+						<div></div>
+					</div>
+				</div>
+				<div class='title_without_orders_botton'>
+					<div style='display:flex;'>Итого : <div id='itog'>${itog_sum}</div> руб.</div>
+				</div>
+			</div>
+		</div>
+	`;
+
+	for (let i = 0 ; i < busket.children.length ; i++){
+		document.getElementById('title_cards').innerHTML += `
+			<div class="busket_tovar_all" value="${busket.children[i].attributes.value.value}" name="${busket.children[i].attributes.name.value}">
+			<div style='width:10%; height:100%; display:flex; flex-direction: column ; '>
+				<div class='busket_tovar_plus busket_tovar_plus_minus'>
+					<svg style='pointer-events: none ;' width="20" height="20" fill="currentColor" viewBox="0 0 15 15">
+						<path style='pointer-events: none ;' d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+			  		</svg>
+				</div>
+				<div class='busket_tovar_minus busket_tovar_plus_minus'>
+					<svg style='pointer-events: none ;' width="20" height="20" fill="currentColor" viewBox="0 0 15 15">
+						<path style='pointer-events: none ;' d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+					</svg>
+				</div>
+			</div>
+	 		<div class='busket_tovar_name'>${busket.children[i].children[1].innerHTML}</div><div class="basket_amount">${busket.children[i].children[2].innerHTML}</div></div>
+		`;
+	};
+};
+
+document.getElementById('checkout_title').addEventListener('click',function(e){
+
+	if (e.target.classList.contains('title_exit')) { // Если нажали на крестик (выход)
+		checkout_title.innerHTML = ``;
+	};
+
+	if (e.target.classList.contains("busket_tovar_plus")) { // если нажали на +
+
+		// пробегаемся по всем карточкам в корзине
+		for(let i=0 ; i < Number(busket.children.length) ; i++){ 
+			// Ecли в корзине есть карточка с такимже именем тогда : 
+			if( busket.children[i].attributes.name.value == e.target.parentNode.parentNode.attributes.name.value){ 
+				// Добавляем 1 товар
+				busket.children[i].children[2].innerHTML++;
+			};
+		};
+
+		// Увеличивает цифру отображаемую карточки
+		e.target.parentNode.parentNode.childNodes[4].innerHTML++; // Добавляем один товар в карточку
+		// Добавляет в итоговую сумму стоимость карточки 
+		document.querySelector('.title_without_orders_center').childNodes[5].children[0].childNodes[1].innerHTML = Number(document.querySelector('.title_without_orders_center').childNodes[5].children[0].childNodes[1].innerHTML) + Number(e.target.parentNode.parentNode.attributes.value.value);
+		let itog_summa = Number(e.target.parentNode.parentNode.attributes.value.value); // Ищем стоимость 1 товара
+		itog_sum = itog_sum + itog_summa ; // Считаем новую итоговую сумму 
+		itog.innerHTML = itog_sum ; // Выводим итоговую сумму
+
+	};
+
+	if (e.target.classList.contains("busket_tovar_minus")) { // Нажатие на - в карточке
+
+		// Пробегаемся по всем товарам в корзине 
+		for(let i=0 ; i < Number(busket.children.length) ; i++){
+			// Как только находим нужную по имени
+			if( busket.children[i].attributes.name.value == e.target.parentNode.parentNode.attributes.name.value){
+				// Убавляем 1 товар
+				busket.children[i].children[2].innerHTML--;
+				
+				// Если данный товар теперь равен 0  
+				if(Number(busket.children[i].children[2].innerHTML) == 0){
+					// Мы его удаляем 
+					busket.children[i].remove();
+				};
+			};
+		};
+
+		if (Number(e.target.parentNode.parentNode.childNodes[4].innerHTML) == 1 ){ // Если в карточке был всего 1 заказ
+			// удаляем товар
+			e.target.parentNode.parentNode.remove();
+		} else { // Если их было более 1 , от 2 
+			// Вычитаем из карточки 1 товар
+			e.target.parentNode.parentNode.childNodes[4].innerHTML--;
+		};
+
+		// Вычитаем из корзины стоимость товара
+		document.querySelector('.title_without_orders_center').childNodes[5].children[0].childNodes[1].innerHTML = Number(document.querySelector('.title_without_orders_center').childNodes[5].children[0].childNodes[1].innerHTML) - Number(e.target.parentNode.parentNode.attributes.value.value);
+		let itog_summa = Number(e.target.parentNode.parentNode.attributes.value.value); // Ищем стоимость 1 товара
+		itog_sum = itog_sum - itog_summa ; // Считаем новую итоговую сумму  
+		itog.innerHTML = itog_sum ; // Выводим итоговую сумму
+	};
+
+	if (Number(document.getElementById('title_cards').children.length) == 0){
+		
+		// Объявляет что в корзине пусто
+		document.querySelector('.title_without_orders_body').innerHTML = `
+			<div>
+				Вы убрали все товары из корзины 
+			</div>
+		`;
+
+		// Итоговая сумма = 0 , поэтому закрываем его
+		document.querySelector('.title_without_orders_center').childNodes[5].children[0].childNodes[1].innerHTML = 0 ;
+		setTimeout(() => {
+			checkout_title.innerHTML = ``;
+		}, 2500);
+	};
 	
-}
+});
