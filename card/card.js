@@ -230,8 +230,9 @@ document.querySelector('#busket_tovar').addEventListener('click',function(e){ //
 //todo Запускаем функцию карзины
 checkout.onclick = () => {
 
+	document.querySelector('html, body').style.overflow = 'hidden' , height= '100%' ;
+
 	// //Количество товаров в корзине
-	// // busket.childNodes.length
 	console.log('Товаров в корзине ' + busket.childNodes.length);
 
 	//* Если в корзине нету товаров тогда 
@@ -271,6 +272,8 @@ function without_orders(){
 	} else { // закрывает лист
 		checkout_title.innerHTML = ``;
 		time_checkout = 0
+
+		document.querySelector('html, body').style.overflow = 'auto', height = 'auto' ;
 	};
 };
 
@@ -330,6 +333,8 @@ document.getElementById('checkout_title').addEventListener('click',function(e){
 
 	if (e.target.classList.contains('title_exit')) { // Если нажали на крестик (выход)
 		checkout_title.innerHTML = ``;
+
+		document.querySelector('html, body').style.overflow = 'auto', height = 'auto' ;
 	};
 
 	if (e.target.classList.contains("busket_tovar_plus")) { // если нажали на +
@@ -398,6 +403,7 @@ document.getElementById('checkout_title').addEventListener('click',function(e){
 		document.querySelector('.title_without_orders_center').childNodes[5].children[0].childNodes[1].innerHTML = 0 ;
 		setTimeout(() => {
 			checkout_title.innerHTML = ``;
+			document.querySelector('html, body').style.overflow = 'auto', height = 'auto' ;
 		}, 2500);
 	};
 	
