@@ -128,7 +128,6 @@ section {
     overflow-y: scroll ;
     overflow-anchor: auto;
     display: flex ;
-    justify-content: center ;
     align-items: center ;
     flex-direction: column ;
     font-size: 0.8em ;
@@ -160,10 +159,12 @@ section {
 .busket_tovar_name{
     width: 80% ;
     text-align: center ;
+    user-select: none; 
 }
 .basket_amount{
     text-align: end ;
     width: 5% ;
+    user-select: none; 
 }
 
 .basket_total {
@@ -337,6 +338,31 @@ section {
     width: 50% ;
     height: 100% ;
 }
+.title_without_orders_body_right div{
+    width: 100% ;
+    margin-top: 15px ;
+    display: flex ;
+    justify-content: center ;
+}
+
+.title_without_orders_body_right form{
+    width: 100% ;
+    height: 100% ;
+    padding-top: 15%;
+    display: flex ;
+    align-items: center ;
+    flex-direction: column ;
+}.title_without_orders_body_right form:first-child{
+    font-weight: 500 ;
+}
+
+.title_without_orders_body_right form div{
+    font-size: 0.7em ;
+    display: flex;
+}
+form{
+    font-size: 0.7em ;
+}
 
 
 
@@ -358,6 +384,32 @@ section {
 
 
 
+input {
+    width: 70%; /* Ширина поля */
+    box-sizing: border-box; /* Ширина не учитывает padding */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    padding: 12px 0; /* Поля вокруг текста */
+    border: none; /* Убираем рамку */
+    border-bottom: 1px solid #ccc; /* Линия снизу */
+    background: transparent; /* Прозрачный фон */
+    cursor: pointer ;
+}
+input[type='submit']{
+    width: 40% ;
+}
+
+input:focus {
+    outline: none; /* Убираем контур */
+    border-bottom: 2px solid var(--color-orange); /* Синяя линия снизу */
+}
+input::placeholder {
+    transition: 0.33s; /* Время трансформации */
+    color: var(--main-color); /* Цвет подсказки */
+}
+input:focus::placeholder { 
+    font-size: 10px; /* Размер шрифта */
+    transform: translateY(-16px); /* Сдвигаем вверх */
+}
 
 
 

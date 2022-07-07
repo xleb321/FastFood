@@ -78,7 +78,7 @@ function reduction() {
 
 //! В левом меню показывает активную вкладку 
 function resetCards() {
-	
+	console.clear();
 	// Отображение категории до
 	console.log('category up to :', category);
 	
@@ -191,8 +191,8 @@ function add2Cart(name, price, numberNode) {
 					</svg>
 				</div>
 			</div>
-	 	<div class='busket_tovar_name'>${name}</div><div class="basket_amount">${cntFromCard}</div></div>`
-	}
+	 	<div class='busket_tovar_name'>${name}</div><div class="basket_amount">${cntFromCard}</div></div>`;
+	};
 };
 
 //! Функция + и - у карточек   
@@ -208,7 +208,8 @@ document.querySelector('#busket_tovar').addEventListener('click',function(e){ //
 		itog_sum = itog_sum + itog_summa ; // Считаем новую итоговую сумму 
 		itog.innerHTML = itog_sum ; // Выводим итоговую сумму
 
-	}
+	};
+
 	if (e.target.classList.contains("busket_tovar_minus")) { // Нажатие на - в карточке
 
 		if (Number(e.target.parentNode.parentNode.childNodes[4].innerHTML) == 1){ // Если в карточке был всего 1 заказ
@@ -223,9 +224,9 @@ document.querySelector('#busket_tovar').addEventListener('click',function(e){ //
 		let itog_summa = Number(e.target.parentNode.parentNode.attributes.value.value); // Ищем стоимость 1 товара
 		itog_sum = itog_sum - itog_summa ; // Считаем новую итоговую сумму  
 		itog.innerHTML = itog_sum ; // Выводим итоговую сумму
-	}
+	};
 	
-})
+});
 
 //todo Запускаем функцию карзины
 checkout.onclick = () => {
@@ -233,7 +234,8 @@ checkout.onclick = () => {
 	document.querySelector('html, body').style.overflow = 'hidden' , height= '100%' ;
 
 	// //Количество товаров в корзине
-	console.log('Товаров в корзине ' + busket.childNodes.length);
+	console.clear();
+	console.log('Товаров в корзине ' + busket.children.length);
 
 	//* Если в корзине нету товаров тогда 
 	if (busket.childNodes.length == 0){
@@ -243,12 +245,12 @@ checkout.onclick = () => {
 	} else {
 		with_orders();
 	};
-}
+};
 
 //! Если ничего не заказанно то вызывается эта функция
 function without_orders(){
 	// Для вызывания первого условия , при первой пробежки и второй при второй
-	time_checkout++
+	time_checkout++;
 
 	// При первой пробежке создаёт лист с просьбой купить товар
 	if (time_checkout == 1){
@@ -268,10 +270,10 @@ function without_orders(){
 				</div>
 			</div>
 		`;
-		time_checkout++
+		time_checkout++;
 	} else { // закрывает лист
 		checkout_title.innerHTML = ``;
-		time_checkout = 0
+		time_checkout = 0;
 
 		document.querySelector('html, body').style.overflow = 'auto', height = 'auto' ;
 	};
@@ -294,12 +296,24 @@ function with_orders(name, price, numberNode){
 				<div class='title_without_orders_body'>
 					<div class='title_without_orders_body_left'>
 						<div class='title_without_orders_body_left_header'>Ваши заказы</div>
-						<div id='title_cards'>
-
-						</div>
+						<div id='title_cards'></div>
 					</div>
 					<div class='title_without_orders_body_right'>
-						<div></div>
+						<form>
+							<div>
+								Контактные данные
+							</div>
+							<div>
+								<input type="text" name='username' placeholder='введите имя' onkeypress="noDigits(event)" required>
+							</div>
+							<div>
+								<input type='tel' name='phone' pattern="+7[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder='Контактный номер' required>
+							</div>
+							<div>
+								<input type='email' name='email' placeholder='Введите mail' required>
+							</div>
+							<input type="submit" value="Заказать">
+						</form>	
 					</div>
 				</div>
 				<div class='title_without_orders_botton'>
@@ -406,5 +420,11 @@ document.getElementById('checkout_title').addEventListener('click',function(e){
 			document.querySelector('html, body').style.overflow = 'auto', height = 'auto' ;
 		}, 2500);
 	};
-	
 });
+
+
+function noDigits(event) {
+	if ("1234567890".indexOf(event.key) != -1){
+		event.preventDefault();
+	};
+};
