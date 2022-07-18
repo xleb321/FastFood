@@ -827,6 +827,4 @@ document.querySelector('#create_title').addEventListener('click',function(e){
 		
 		create_title.innerHTML = ``;
 	};
-
-	document.getElementById('create_card_prise').innerHTML = `${create_card_prise}`;
 });
