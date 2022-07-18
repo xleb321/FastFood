@@ -191,7 +191,7 @@ input[type="number"]::-webkit-inner-spin-button {
     justify-content: space-around ;
 }
 .custom_burger_active{
-    background-color: rgb(217,103,70);
+    /* background-color: rgb(217,103,70); */
     border-radius: 5px ;
 }
 .custom_burger_podbor{

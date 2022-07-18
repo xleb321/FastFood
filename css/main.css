@@ -11,6 +11,7 @@
     --color-white: rgb(255, 255, 255);
     --border-orange: 3px solid rgb(244, 178, 0);
     --color-orange: rgb(244,178,0) ;
+    --color-red: rgb(217,103,70);
 }
 
 body {
@@ -314,7 +315,7 @@ section {
 .title_exit{
     cursor: pointer ;
     position: relative ;
-    left: 30% ;
+    left: 15% ;
     color: white ;
 }
 .title_exit svg path{
@@ -365,6 +366,160 @@ form{
 }
 
 
+.create_cards_all{
+    width: 100% ;
+    height: 560px ;
+    background-color: var(--main-bg-color);
+}
+.create_cards_header{
+    width: 90% ;
+    margin: 40px 20px 20px 30px;
+    font-size: 20px ;
+    border-radius: 10px ;
+    background-color: var(--color-white) ;
+    display: flex ; justify-content: space-between ;
+}
+.create_cards_header div{
+    height: 50px ;
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    cursor: pointer ;
+    transition: 0.33s;
+}
+.create_cards_header div:nth-child(1){
+    border-radius: 10px 0 0 10px ;
+}
+.create_cards_header div:last-child{
+    border-radius: 0 10px 10px 0;
+}
+.but_create{
+    pointer-events: all ;
+}
+.create_cards_header div:hover{
+    background-color: var(--main-color-hover) ;
+}
+#create_cards_flipping{
+    width: 100% ; height: 30px ;
+    display: flex ; align-items: center ; justify-content: space-between;
+    pointer-events: all ;
+}
+#create_cards_flipping div{
+    width: 135px ; height: 30px ;
+    color: var(--color-white) ; font-size: 0.8em ;
+    background-color: var(--color-red) ; border-radius: 5px ;
+    display: flex ; align-items: center ; justify-content: center ;
+    position: relative ;
+    cursor: pointer ;
+    margin: 0 25px;
+}
+
+#create_cads_title{
+    width: 100% ; height: 355px ; max-height: 355px ;
+    margin-top: 10px ;
+    display: flex ; justify-content: center ; align-items: center ; flex-wrap: wrap ;
+    overflow-y: auto ;
+    scrollbar-width: thin;
+}
+#card_in_create{
+    width:230px; height:310px;
+    margin-bottom: 10px ;
+    display: flex ; flex-direction: column ; align-items: center ;
+}
+#card_in_create:hover{
+    background-color: var(--color-orange);
+}
+.card_in_create_img{
+    width: 160px ; height: 160px ;
+    background-color: var(--color-white) ;
+    border-radius: 100px ; border: 10px solid var(--color-orange);
+    display: flex ; align-items: center ; justify-content: center ;
+}
+.card_in_create_img img{
+    width: 80% ;
+}
+.card_in_create_name{
+    width: 80% ; height: 60px ;
+    display: flex ; align-items: center ; justify-content: center ; text-align: center ;
+    margin-top: 15px ; padding-bottom: 10px ;
+    border-bottom: 2px solid var(--main-color);
+}
+.card_in_create_prise{
+    margin-top: 10px ;
+    color: var(--color-red) ; font-size: 0.8em ;
+    display: flex ;
+}
+#create_cards_itog{
+    width: 100% ; height: 60px ; 
+    color: var(--color-red) ; font-size: 1.2em ; 
+    background-color: var(--color-white) ;
+    display:flex; align-items:center; justify-content: center ; flex-direction: column ;
+}
+
+#create_cads_title::-webkit-scrollbar {
+    margin: 0 ;
+    padding: 0 ;
+    width: 10px ;
+    height: 100% ;
+}
+#create_cads_title::-webkit-scrollbar-thumb{
+    background-color: var(--color-orange);
+}
+#create_cads_title::-webkit-scrollbar-thumb:active{
+    cursor: pointer ;
+}
+
+.create_card_last_title{
+    width:100%; height: 100% ;
+}
+.create_card_last_title_header{
+    width: 100% ;
+    font-size:25px ;
+    border-bottom: 1px solid ;
+}
+
+.create_card_last_title_body{
+    width: 100% ; height: 350px ;
+    white-space: nowrap ;
+}
+.create_card_last_title_body_all{
+    width: 50% ; height : 100% ; 
+    padding-top: 10px ; 
+    line-height: 2 ;
+}
+.create_card_last_title_body_all div:first-child{
+    padding-top: 10px ;
+}
+.create_card_last_title_body_all div:last-child{
+    width: 400px ;
+    padding-bottom: 20px ;
+    border-bottom: 1px solid ;
+}
+#random_img{
+    width: 50% ; height: 350px ;
+    display: flex ; align-items: center ; justify-content: center ;
+}
+#random_img div{
+    width: 180px ; height: 180px ;
+    background-color: var(--color-white) ; border-radius: 100px ; border: 10px solid var(--color-orange) ;
+    display: flex ; align-items: center ; justify-content: center ;
+}
+#random_img div img {
+    width: 70% ;
+}
+.create_in_busket{
+    width: 130px ; height: 30px ;
+    margin-left: 10px ;
+    color: var(--color-white) ; font-size: 0.6em ;
+    background-color: var(--color-orange) ;
+    border-radius: 5px ;
+    display: flex ; align-items: center ; justify-content: center ;
+    cursor: pointer ; transition: 0.3s ;
+}
+.create_in_busket:hover{
+    background-color: var(--color-red) ;
+}
+
 
 
 
@@ -395,9 +550,11 @@ input {
     cursor: pointer ;
 }
 input[type='submit']{
-    width: 40% ;
+    width: 35% ;
 }
-
+input:hover{
+    border-bottom: 1px solid var(--main-color-hover);
+}
 input:focus {
     outline: none; /* Убираем контур */
     border-bottom: 2px solid var(--color-orange); /* Синяя линия снизу */
@@ -410,8 +567,6 @@ input:focus::placeholder {
     font-size: 10px; /* Размер шрифта */
     transform: translateY(-16px); /* Сдвигаем вверх */
 }
-
-
 
 
 
