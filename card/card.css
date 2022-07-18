@@ -64,7 +64,6 @@
     border-top: 2px solid var(--main-color);
     border-bottom: 2px solid var(--main-color);
     line-height: 1.1em;
-    cursor: pointer;
 }
 
 .prices {
