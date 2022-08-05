@@ -1,0 +1,24 @@
+#BasketTovar .BasketTovarAll{
+    width: 215px ;
+    padding: 5px 0 5px 0;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: var(--border-orange);
+    pointer-events: none;
+}
+
+#BasketTovar .BasketTovarPlusMinus{
+    height: 50% ; width: 100% ;
+    cursor: pointer; pointer-events: all;
+}
+
+#BasketTovar .BasketTovarName{
+    width: 80% ;
+    text-align: center ;
+    user-select: none; pointer-events: none;
+}
+
+#BasketTovar .BasketAmount{
+    text-align: end ;
+    width: 5% ;
+    user-select: none; pointer-events: none;
+}

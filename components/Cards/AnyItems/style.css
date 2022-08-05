@@ -1,0 +1,119 @@
+:root {
+    --main-color: rgb(68, 68, 68);
+    --main-color-hover: rgb(0, 154, 61);
+    --color-white: rgb(255, 255, 255);
+    --orange: rgb(244, 178, 0);
+    --main-bg-color: rgb(236, 234, 233);
+}
+
+.Card {
+    width: 210px;
+    margin: 0 20px 80px 20px;
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    pointer-events: none ;
+}
+
+.Logo {
+    width: 210px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+#Logo {
+    height: 60px;
+}
+
+.Type {
+    width: 165px; height: 165px;
+    margin: 10px 0 0 -6px;
+    border-radius: 100px; border: 10px solid var(--orange);
+    display: flex; align-items: center; justify-content: center;
+    background-color: white;
+}
+
+#Type {
+    transform: scale(0.7);
+}
+
+.NameType {
+    height: 50px;
+    font-size: 1em; 
+    display: flex; align-items: center; text-align: center;
+}
+
+#Variety {
+    height: 52px;
+    display: flex ; align-items: center ; text-align: center ;
+    font-size: 0.7em ; color: rgb(80, 145, 202) ; text-decoration: underline ; line-height: 1.1em ;
+    border-top: 2px solid var(--main-color); border-bottom: 2px solid var(--main-color) ;
+}
+
+.Prices {
+    height: 50px;
+    font-size: 0.9em ; color: rgb(217, 105, 73) ;
+    margin: -5px 0 0 -2px ;
+    display: flex; align-items: center;
+}
+
+.Lot {
+    margin-left: -6px;
+    margin-top: -7px;
+    font-size: 0.555em;
+}
+
+.Switches {
+    width: 20px; height: 20px;
+    border: none; border-radius: 20px;
+    cursor: pointer; pointer-events: all ;
+}
+
+.SumItem {
+    margin: 0 0 0 -6px;
+}
+
+.SumItem button {
+    margin: 0 20px;
+}
+
+.SumItem input[type=number] {
+    width: 40px;
+    height: 22.5px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-white);
+    cursor: pointer;
+}
+
+input[type="number"] {
+    appearance: textfield;
+}
+
+.Raz {
+    all: unset;
+    -moz-appearance: textfield;
+    font-size: 0.8em; text-align: center;
+    cursor: pointer; pointer-events: all ;
+}
+
+.Raz::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.InBusket button {
+    margin: 8px 0 0 -6.5px;
+    width: 140px; height: 35px;
+    border-radius: 5px; border: none;
+    background-color: var(--orange);
+    font-weight: 600; font-size: 0.7em; color: var(--color-white);
+    transition: 0.25s;
+    cursor: pointer; pointer-events: all ;
+}
+
+.InBusket button:hover {
+    background-color: var(--main-color-hover);
+}

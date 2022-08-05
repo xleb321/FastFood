@@ -1,0 +1,146 @@
+.TitleWithoutOrdersBackgraund{
+    width:100%; height:100%;
+    z-index: 550; position:fixed; top: 0; left: 0 ;
+    opacity: 0.7;
+    background: linear-gradient(45deg,rgba(0, 0, 0, 0) 48%,rgba(255, 255, 255, 0.1) 50%,rgba(0, 0, 0, 0) 52%),linear-gradient(-45deg,rgba(0, 0, 0, 0) 48%,rgba(255, 255, 255, 0.1) 50%,rgba(0, 0, 0, 0) 52%);
+    background-size: 0.5em 0.5em;
+    background-color: #303030;
+}
+
+.TitleWithoutOrdersCenterAll{
+    width: 100% ;
+    height: 100% ;
+    z-index: 551 ;
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+}
+
+.TitleWithoutOrdersCenter{
+    width: 800px ;
+    height: 620px ;
+    display: flex ;
+    flex-direction: column ;
+}
+
+.TitleWithoutOrdersHeader{
+    width: 100% ;
+    height: 60px ;
+    background-color: rgb(245,195,0);
+    color: var(--color-white);
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    border-radius: 5px 5px 0 0;
+}
+
+.TitleWithoutOrdersBody{
+    width: 100% ;
+    height: 500px ;
+    font-size: 2em ;
+    background-color: var(--main-bg-color);
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+}
+
+.TitleWithoutOrdersBotton{
+    width: 100% ;
+    height: 60px ;
+    background-color: var(--color-white);
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    border-radius: 0 0 5px 5px ;
+}
+
+.TitleWithoutOrdersBodyLeft{
+    width: 50% ;
+    height: 100% ;
+    display: flex ;
+    align-items: center ;
+    flex-direction: column ;
+    font-size: 0.6em ;
+}
+
+.TitleWithoutOrdersBodyLeftHeader{
+    padding: 10px 0 ;
+}
+
+.TitleExit{
+    cursor: pointer ;
+    position: relative ;
+    left: 15% ;
+    color: white ;
+}
+
+.TitleExit svg path{
+    font-weight: 700 ;
+}
+
+#TitleCards{
+    width: 100% ;
+    max-height: 100% ;
+    display: flex ;
+    align-items: center ;
+    flex-direction: column ;
+    overflow-y: scroll ;
+    overflow-anchor: auto;
+}
+
+#TitleCards .BusketTovarAll{
+    width: 90% ;
+    font-size: 0.9em ;
+}
+
+.TitleWithoutOrdersBodyRight{
+    width: 50% ;
+    height: 100% ;
+}
+
+form{
+    width: 100% ; height: 100% ;
+    padding-top: 15%;
+    font-size: 0.7em ;
+    display: flex ; align-items: center ; flex-direction: column ;
+}
+
+form div{
+    font-size: 0.7em ;
+    display: flex;
+}
+
+input {
+    width: 250px; /* Ширина поля */
+    box-sizing: border-box; /* Ширина не учитывает padding */
+    margin: 10px 0; padding: 12px 0;
+    border: none; border-bottom: 1px solid #ccc;
+    background: transparent; /* Прозрачный фон */
+    cursor: pointer ;
+}
+
+input[type='submit']{
+    width: 35% ;
+}
+
+input:hover{
+    border-bottom: 1px solid var(--main-color-hover);
+}
+
+input:focus {
+    outline: none; /* Убираем контур */
+    border-bottom: 2px solid var(--color-orange); /* Синяя линия снизу */
+}
+
+input::placeholder {
+    transition: 0.33s; /* Время трансформации */
+    color: var(--main-color); /* Цвет подсказки */
+}
+
+input:focus::placeholder { 
+    font-size: 10px; /* Размер шрифта */
+    transform: translateY(-16px); /* Сдвигаем вверх */
+}

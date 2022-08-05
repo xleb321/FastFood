@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FastFood</title>
+    <link rel="icon" type="image/png" href="i/logo.jpg">
+
+    <link rel="stylesheet" href="components/main.css">
+
+    <link rel="stylesheet" href="components/Cards/AnyItems/style.css">
+    <link rel="stylesheet" href="components/ItemList/style.css">
+    <link rel="stylesheet" href="components/Busket/AddToBasket/style.css">
+    <link rel="stylesheet" href="components/Checkout/style.css">
+    <link rel="stylesheet" href="components/Checkout/AnOrder/style.css">
+    <link rel="stylesheet" href="components/Checkout/AnOrder/ProductGeneration/style.css">
+</head>
+<body>
+
+    <header>СДЕЛАЙ ЗАКАЗ НАПРЯМУЮ ИЗ РЕСТОРАНА</header>
+
+    <section>
+        <div id="Left">
+
+            <div id="AppMenu">
+                <div id="pancakes" class="Products">Блины</div>
+                <div id="shaurma" class="Products">Шаурма</div>
+                <div id="sandwiches" class="Products ProductActive">Сэндвичи</div>
+                <div id="burgers" class="Products">Бургеры</div>
+                <div id="chicken" class="Products">Курица $ Картофель</div>
+                <div id="salads" class="Products">Тортилья & Салаты</div>
+                <div id="drinks" class="Products">Напитки & Десерты</div>
+            </div>
+
+            <div class="Basket">
+                <div class="BasketHeader">
+                    <div class="BasketHeaderSvg">
+                        <svg width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
+                          </svg>
+                    </div>
+                    <div class="BasketHeaderName">
+                        Корзина
+                    </div>
+                </div>
+                <div class="BasketDivision">
+                    <div>
+                        Название
+                    </div>
+                    <div>
+                        Количество
+                    </div>
+                </div>
+                <div id="BasketTovar"></div>
+                <div class="BasketTotal">
+                    Итого: <sum id="KorzSum"> 0</sum> руб.
+                </div>
+                <div class="Subtotal">
+                    <button id="Checkout">ОФОРМИТЬ ЗАКАЗ</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="Right">
+            <div id='Cards'></div>
+        </div>
+
+    </section>
+
+    <div id="CheckoutTitle"></div>
+
+    <script type="module" src="components/main.js"></script>
+    <script type="module" src="components/Cards/script.js"></script>
+    <script type="module" src="components/Checkout/script.js"></script>
+    <script type="module" src="components/Checkout/AnOrder/script.js"></script>
+    
+</body>
+</html>
