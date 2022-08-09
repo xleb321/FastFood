@@ -1,12 +1,14 @@
+import LogicCustomPage from "./PageСhange/Logic/script.js";
+
 export default function CustomOrder() {
     document.querySelector('html, body').style.overflow = 'hidden' ;
 
-	JsonBurger = {sizes:'15 См',breads:'Белый итальянский',vegetables:'нет',sauces:'нет',fillings:'нет'};
-	CreateCardPrise = 100 ;       // Минимальная цена иначе будет слишком дёшево
-	Str = 0 ;
+	let JsonBurger = {sizes:'15 См',breads:'Белый итальянский',vegetables:'нет',sauces:'нет',fillings:'нет'};
+	let CreateCardPrise = 100 ;       // Минимальная цена иначе будет слишком дёшево
+
 	CheckoutTitle.innerHTML += /*html*/`
 		<div class='TitleWithoutOrdersBackgraund'></div>
-		<div class='TitleWithoutOrdersCenterAll'>
+		<div class='TitleWithoutOrdersCenterAll' name='CustomOrder'>
 			<div class='TitleWithoutOrdersCenter'>
 				<div class='TitleWithoutOrdersHeader'>
 					<div style='font-size:1.5em;' >Создание бургера</div>
@@ -18,7 +20,7 @@ export default function CustomOrder() {
 				</div>
 					<div class='CreateCardsAll'>
 						<div class='CreateCardsHeader'>
-							<div class='ButCreate' style='width:130px;'>Размер</div>
+							<div class='ButCreate ' style='width:130px;'>Размер</div>
 							<div class='ButCreate' style='width:85px;'>Хлеб</div>
 							<div class='ButCreate' style='width:125px;'>Овощи</div>
 							<div class='ButCreate' style='width:115px;'>Соусы</div>
@@ -43,7 +45,7 @@ export default function CustomOrder() {
 				</div>
 				<div style='display:flex;'>
 					<div id='RandomImg'>
-						<div><img src='${JsonImg}'/></div>
+						<div><img src=''/></div>
 					</div>
 					<div id='CreateCadsTitle'></div>
 				</div>
@@ -58,10 +60,11 @@ export default function CustomOrder() {
 					</div>
 					<div style='display:flex;'>
 						<div style='display:flex;'>Итого: <div id='CreateCardPrise' price='15' fillings='нет'>${CreateCardPrise}</div> руб.</div>
-						<div class='CreateInBusket'>В КОРЗИНУ</div>
+						<div class='CreateInBasket'>В КОРЗИНУ</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	`;
-}
+	LogicCustomPage(JsonBurger);
+};

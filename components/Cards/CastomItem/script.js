@@ -12,7 +12,7 @@ export default function CustomItem() {
 	    		<input type="number" min="1" value="1" placeholder="1" class="Raz" /> 
 	    		<button class="Switches" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
 	    	</div>
-	    	<div class='InBusket'><button>Начать создание</button></div>
+	    	<div class='InBusket'><button name='CustomBurger'>Начать создание</button></div>
 	    </div>
 	`;
 };

@@ -7,7 +7,7 @@ export default function AnOrder() {
 
     CheckoutTitle.innerHTML = /*html*/`
 		<div class='TitleWithoutOrdersBackgraund'></div>
-		<div class='TitleWithoutOrdersCenterAll'>
+		<div class='TitleWithoutOrdersCenterAll' name='AnOrder'>
 			<div class='TitleWithoutOrdersCenter'>
 				<div class='TitleWithoutOrdersHeader'>
 					<div>Оформление заказа</div>

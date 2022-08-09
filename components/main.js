@@ -4,8 +4,11 @@ import AddToBasket from "./Busket/AddToBasket/script.js";
 import EditAmount from "./Busket/EditAmount/script.js";
 import SelectionOrder from "./Checkout/script.js";
 import QuantityChange from "./Checkout/AnOrder/QuantityСhange/script.js";
+import CustomOrder from "./Checkout/CustomOrder/script.js";
+import LogicCustomPage from "./Checkout/CustomOrder/PageСhange/Logic/script.js";
 
 let Selected = sandwiches ;     // Стартовый поик элемента
+let Str = 0 ;
 
 document.querySelector('#AppMenu').addEventListener('click',function(e){       // Переключение категорий
     Selected = e.target; 
@@ -15,10 +18,13 @@ document.querySelector('#AppMenu').addEventListener('click',function(e){       /
 });
 
 document.querySelector('#Cards').addEventListener('click',function(e){     // Добавление в корзину
-    if(
-        (e.target.parentNode.classList.contains('InBusket')) &&
-        (e.target.parentNode.parentNode.children[2].textContent != 'Создай бурито своими руками')){        // Отлов нажатия на кнопку basket
-            AddToBasket(e);
+    if  (
+            (e.target.parentNode.classList.contains('InBusket')) &&
+            (e.target.parentNode.parentNode.children[2].textContent != 'Создай бурито своими руками')
+        ) {        // Отлов нажатия на кнопку basket
+        AddToBasket(e);
+    } else if ( e.target.parentNode.parentNode.children[2].textContent == 'Создай бурито своими руками' ){
+        CustomOrder();
     };
 });
 
@@ -38,12 +44,20 @@ document.querySelector('#Checkout').addEventListener('click',function(){     // 
     SelectionOrder();
 });
 
-document.querySelector('#CheckoutTitle').addEventListener('click',function(e){
-    let MoreLess = e.target.attributes.name.value ;
+document.querySelector('#CheckoutTitle').addEventListener('click',function(e){      // Изменение количество на странице заказа товара
+    
+    if ( CheckoutTitle.children[1].attributes.name.value == 'AnOrder' ) {
+        
+        let MoreLess = e.target.attributes.name.value ;
 
-    if ( e.target.classList.value =='BasketTovarPlusMinus'){
-        QuantityChange(MoreLess , e);
+        if ( e.target.classList.value == 'BasketTovarPlusMinus' ) {
+            QuantityChange(MoreLess , e);
+        };
+
+    } else if ( CheckoutTitle.children[1].attributes.name.value == 'CustomOrder' ) {
+        LogicCustomPage(Str);
     }
+
 });
 
 Sorting(Selected);      // Генерация карточек
