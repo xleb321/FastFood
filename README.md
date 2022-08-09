@@ -1,1 +1,1 @@
-FastFood.github.io
+fastfood.github.io
